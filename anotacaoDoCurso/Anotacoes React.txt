@@ -1,0 +1,13 @@
+#Repositorio do curso:
+Curso react: https://github.com/matheusbattisti/curso_react
+API de filmes: https://github.com/matheusbattisti/movies_lib/tree/main
+
+# Comandos React
+
+- Criar projeto:
+npx create-react-app nome-do-projeto
+ou maneira mais atual: npm create vite@lastest
+
+- Abrir projeto:
+ npm start
+
