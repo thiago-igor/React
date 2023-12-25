@@ -6,8 +6,18 @@ API de filmes: https://github.com/matheusbattisti/movies_lib/tree/main
 
 - Criar projeto:
 npx create-react-app nome-do-projeto
-ou maneira mais atual: npm create vite@lastest
 
 - Abrir projeto:
  npm start
+
+
+ - Maneira mais atual: 
+
+ - Cria projeto: 
+npm create vite@latest
+
+- Abrir projeto:
+I) npm install
+II) npm run dev 
+
 
