@@ -6,6 +6,8 @@ import ListRender from './assets/components/ListRender';
 import ConditionalRender from './assets/components/ConditionalRender';
 import ShowUserName from './assets/components/ShowUserName';
 import CarDetails from './assets/components/CarDetails';
+import Fragments from './assets/components/Fragments';
+import Container from './assets/components/Container';
 
 function App() {
 
@@ -48,7 +50,11 @@ function App() {
           newCar={car.newCar}
           key={car.id} />
       ))}
-          {/*"Key" para identificar cada elemento  */}
+      
+      <Fragments propFragments= "Teste"/>
+      <Container>
+        <p>Novo Conteudo</p>
+      </Container>
 
     </div>
   );
