@@ -8,6 +8,8 @@ import ShowUserName from './assets/components/ShowUserName';
 import CarDetails from './assets/components/CarDetails';
 import Fragments from './assets/components/Fragments';
 import Container from './assets/components/Container';
+import ExecuteFunction from './assets/components/ExecuteFunction';
+import Cnh from './assets/components/Cnh';
 
 function App() {
 
@@ -15,6 +17,16 @@ function App() {
     {id:1, brand: "Ferrari", color: "Amarela", km: 0, newCar: true},
     {id:2, brand: "Fiat", color: "Bege", km: 35245, newCar: false},
     {id:3, brand: "Renalt", color: "Cinza", km: 8745, newCar: false},
+  ]
+
+  function showMenssage() {
+    console.log("Evento do componente pai");
+  }
+
+  const pessoas = [
+    {id:1, name: "Thiago", age: 24, profissao: "Programador" },
+    {id:2, name: "Sabrina", age: 18, profissao: "Enfermeira" },
+    {id:3, name: "Caio", age: 16, profissao: "Estudante" },
   ]
 
   return (
@@ -55,6 +67,15 @@ function App() {
       <Container>
         <p>Novo Conteudo</p>
       </Container>
+      {/*Execução de função: */}
+      <ExecuteFunction myFunction={showMenssage}/>
+      {pessoas.map((pessoa) => (
+        <Cnh
+        key={pessoa.id} 
+        nome={pessoa.name}
+        age={pessoa.age}
+        profissao={pessoa.profissao} />
+      ))}
 
     </div>
   );
