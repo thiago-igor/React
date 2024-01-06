@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CarDetails = ({brand, km, color, newCar}) =>  { // Recebendo valores herdados por "App.jsx"
   return (
     <div>
