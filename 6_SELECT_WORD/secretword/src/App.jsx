@@ -25,8 +25,45 @@ function App() {
   const [gameStage, setGameStage] = useState(stages[0].name)
   const [words] = useState(wordsList);
 
+  const [pickedWord, setPickedWord] = useState(""); // A Palavra
+  const [pickedCategory, setPickedCategory] = useState(""); // A Categoria onde estar a palavra
+  const [letters, setLetters] = useState([]); // Array de letras da palavra
+
+  const [guessedLetters, setGuessedLetters] = useState([]); // Palavras acertadas
+  const [wrongLetters, setWrongLetters] = useState([]);// Palavras erradas
+  const [guesses, setGuesses] = useState(3); // tentativas para acertar
+  const [score, setScore] = useState(0) // pontuação a cada acerto
+
+  const pickWordAndCategory = () => {
+    //Categoria Aleatoria:
+    const categories = Object.keys(words) //As chaves do objeto word (Categorias)
+    const category = categories[Math.floor(Math.random() * Object.keys(categories).length)] // pegando categoria aleatoriamente
+
+    // Palavra aleatoria:
+    const word = words[category][Math.floor(Math.random() * words[category].length)]
+
+    return {word, category}
+  }
+
   //start the secret word game
   const startGame = () => {
+    const {word, category} = pickWordAndCategory();
+
+    
+    // Create palavras em letras
+    let wordLetters = word.split("");
+    
+    wordLetters = wordLetters.map((I) => I.toLowerCase())
+    
+    console.log(word, category)
+    console.log(wordLetters);
+
+    //Finalizando:
+    setPickedWord(word);
+    setPickedCategory(category);
+    setLetters(letters);
+
+    //start jogo
     setGameStage(stages[1].name)
   };
 
