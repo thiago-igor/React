@@ -21,3 +21,7 @@ I) npm install
 II) npm run dev 
 
 
+- Inicializando API: 
+I)npm i json-server
+
+

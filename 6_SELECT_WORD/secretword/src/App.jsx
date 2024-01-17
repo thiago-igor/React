@@ -59,7 +59,7 @@ function App() {
     // Create palavras em letras
     let wordLetters = word.split("");
     
-    wordLetters = wordLetters.map((I) => I.toLowerCase())
+    wordLetters = wordLetters.map((I) => I.toLowerCase()) // transformando em maiusculo
     
     console.log(word, category)
     console.log(wordLetters);
