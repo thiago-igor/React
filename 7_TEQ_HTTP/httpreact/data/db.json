@@ -39,6 +39,41 @@
       "id": "9f73",
       "name": "calça",
       "price": "75.99"
+    },
+    {
+      "id": "06cf",
+      "name": "pente",
+      "price": "10.99"
+    },
+    {
+      "id": "5bad",
+      "name": "sandalha",
+      "price": "10"
+    },
+    {
+      "id": "0c1d",
+      "name": "teste",
+      "price": "10"
+    },
+    {
+      "id": "9c80",
+      "name": "teste2 ",
+      "price": "1"
+    },
+    {
+      "id": "555b",
+      "name": "teste3",
+      "price": "3"
+    },
+    {
+      "id": "535d",
+      "name": "teste 4",
+      "price": "10"
+    },
+    {
+      "id": "c1a2",
+      "name": "teste5",
+      "price": "5"
     }
   ]
 }

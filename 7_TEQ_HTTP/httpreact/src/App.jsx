@@ -12,7 +12,7 @@ function App() {
 
   // 4 - custom hooks:
 
-  const { data:items } = useFetch(url);
+  const { data:items, loading, error } = useFetch(url);
 
 
   const [name, setName] = useState("")
@@ -64,13 +64,17 @@ function App() {
   return (
     <div className="app">
       <h1>Lista de produtos</h1>
-
-      <ul> {/* Se items for diferente de null, executa */}
+      {/*6 - Loading */}
+      {loading && <p>Carregando dados...</p>}
+      {error && <p>{error}</p>}
+      {!error && (
+        <ul> {/* Se items for diferente de null, executa */}
         {items && items.map((product) => ( // "for" de todos os produtos 
           <li key={product.id}> {product.name} - R$: {product.price} </li>
         ))}
       </ul>
-
+      )}
+      
       <div className="add-product">
         <form onSubmit={handleSubmit}> {/*Função chamada quando feito o submit */}
           <label>
