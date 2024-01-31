@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 // 4 - custom hook
 
-export const useEffect = (url) => {
+export const useFetch = (url) => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        const fetchData =async () => { // busca dados na API
+        const fetchData = async () => { // busca dados na API
             const res = await fetch(url);
             /* 'fetch' é utilizada para fazer uma requisição HTTP para a URL especificada. O 'await' é utilizado para esperar a conclusão da requisição antes de prosseguir. */
 

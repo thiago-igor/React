@@ -2,29 +2,36 @@ import './App.css'
 
 import { useState, useEffect } from 'react';
 
+//4 - custom hook:
+import {useFetch} from "./hooks/useFetch"
+
 const url = "http://localhost:3000/products" // url dos produtos na API
 
 function App() {
   const[products, setProducts] = useState([]) // array de produtos
 
+  // 4 - custom hooks:
+
+  const { data:items } = useFetch(url);
+
+
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
-  
+  /* 
   // 1 - Resgatando dados:
   useEffect(() => {
 
     async function fetchData(){ // busca dados na API
       const res = await fetch(url);
-      /* 'fetch' é utilizada para fazer uma requisição HTTP para a URL especificada. O 'await' é utilizado para esperar a conclusão da requisição antes de prosseguir. */
-
       const data = await res.json();
-      // A resposta da requisição é convertida para JSON
-
       setProducts(data);
     }
     fetchData();
   }, []);
+
+  */
+
 
   // 2 - Adção de produtos
   const handleSubmit = async (e) => { /*Função chamada quando feito o submit */
@@ -58,8 +65,8 @@ function App() {
     <div className="app">
       <h1>Lista de produtos</h1>
 
-      <ul>
-        {products.map((product) => ( // "for" de todos os produtos 
+      <ul> {/* Se items for diferente de null, executa */}
+        {items && items.map((product) => ( // "for" de todos os produtos 
           <li key={product.id}> {product.name} - R$: {product.price} </li>
         ))}
       </ul>
